@@ -55,7 +55,7 @@ paru
 
 # Install basic tools
 echo "Installing all the dependencies needed thorough package manager"
-paru --noconfirm -S --needed git curl neovim unzip make lua-language-server stylua fzf nodejs-lts-iron npm clang astyle jdtls python python-pip python-debugpy python-ipython-autoimport python-black python-pipx postgresql postgresql-libs gdb shfmt
+paru --noconfirm -S --needed git curl neovim unzip make lua-language-server stylua fzf nodejs-lts-iron npm clang astyle jdtls python python-pip python-debugpy python-ipython-autoimport python-black python-pipx postgresql postgresql-libs gdb shfmt shellcheck
 
 # Install Vim-Plug
 echo "Installing Vim-Plug..."
