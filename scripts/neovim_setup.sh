@@ -27,7 +27,10 @@ spinner() {
 # Print functions
 print_header() { echo -e "${BLUE}${BOLD}===> $1${NC}"; }
 print_success() { echo -e "${GREEN}${BOLD}[✔] $1${NC}"; }
-print_error() { echo -e "${RED}${BOLD}[✘] $1${NC}"; exit 1; }
+print_error() {
+  echo -e "${RED}${BOLD}[✘] $1${NC}"
+  exit 1
+}
 
 # Banner
 clear
@@ -38,7 +41,6 @@ echo "========================================="
 echo -e "${NC}"
 echo "Installing dependencies in a virtual environment..."
 echo
-
 
 echo "Starting Neovim dependency installation for Arch Linux..."
 
@@ -86,7 +88,6 @@ cargo install exo
 
 echo "Installing dependencies through pipx"
 pipx install debugpy jupytext ipython
-
 
 # Clone plugins (handled by Vim-Plug, but ensure directory exists)
 echo "Setting up plugin directory..."
