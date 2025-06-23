@@ -32,6 +32,11 @@ local plugin_settings = {
   "whichkey",
 }
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "bspwmrc", "sxhkdrc" },
+  command = "set filetype=sh",
+})
+
 for _, module in ipairs(plugin_settings) do
   local ok, err = pcall(require, "plugin-settings." .. module)
   if not ok then
