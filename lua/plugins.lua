@@ -1,85 +1,131 @@
+-- ============================================================================
+-- plugins.lua
+-- Plugin List for Neovim (Vim-Plug Syntax)
+-- Professional, Readable, and Well-Documented
+-- ============================================================================
+
 vim.cmd([[
   call plug#begin('~/.local/share/nvim/plugged')
 
-  " Theme
-  Plug 'EdenEast/nightfox.nvim' " Nightfox Theme
-  Plug 'rose-pine/neovim' " Rose-Pine Theme
+  " -------------------------------------------------------------------------
+  " Theme Plugins
+  " -------------------------------------------------------------------------
+  Plug 'EdenEast/nightfox.nvim'         " Nightfox Theme
+  Plug 'rose-pine/neovim'               " Rose-Pine Theme
 
-  " LSP and completion
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'L3MON4D3/LuaSnip'
-  Plug 'saadparwaiz1/cmp_luasnip'
+  " -------------------------------------------------------------------------
+  " LSP and Completion
+  " -------------------------------------------------------------------------
+  Plug 'neovim/nvim-lspconfig'          " LSP support
+  Plug 'hrsh7th/nvim-cmp'               " Autocompletion
+  Plug 'hrsh7th/cmp-nvim-lsp'           " LSP source for nvim-cmp
+  Plug 'hrsh7th/cmp-buffer'             " Buffer source for nvim-cmp
+  Plug 'hrsh7th/cmp-path'               " Path source for nvim-cmp
+  Plug 'L3MON4D3/LuaSnip'               " Snippet engine
+  Plug 'saadparwaiz1/cmp_luasnip'       " LuaSnip completion source
 
+  " -------------------------------------------------------------------------
   " Linting
-  Plug 'mfussenegger/nvim-lint'
+  " -------------------------------------------------------------------------
+  Plug 'mfussenegger/nvim-lint'         " Asynchronous linting
 
-  " Fuzzy finder (Picker)
-  Plug 'ibhagwan/fzf-lua', { 'branch': 'main' }
+  " -------------------------------------------------------------------------
+  " Fuzzy Finder
+  " -------------------------------------------------------------------------
+  Plug 'ibhagwan/fzf-lua', { 'branch': 'main' } " Fuzzy finder
 
-  " File navigation
-  Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
-  Plug 'nvim-lua/plenary.nvim'
+  " -------------------------------------------------------------------------
+  " File Navigation
+  " -------------------------------------------------------------------------
+  Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' } " Quick file navigation
+  Plug 'nvim-lua/plenary.nvim'          " Lua functions used by many plugins
 
-  " Syntax highlighting
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  " -------------------------------------------------------------------------
+  " Syntax Highlighting
+  " -------------------------------------------------------------------------
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " Treesitter
 
+  " -------------------------------------------------------------------------
   " Statusline
-  Plug 'nvim-lualine/lualine.nvim'
+  " -------------------------------------------------------------------------
+  Plug 'nvim-lualine/lualine.nvim'      " Statusline
 
-  " File explorer
-  Plug 'stevearc/oil.nvim'
+  " -------------------------------------------------------------------------
+  " File Explorer
+  " -------------------------------------------------------------------------
+  Plug 'stevearc/oil.nvim'              " Modern file explorer
 
-  " Git integration
-  Plug 'lewis6991/gitsigns.nvim'
+  " -------------------------------------------------------------------------
+  " Git Integration
+  " -------------------------------------------------------------------------
+  Plug 'lewis6991/gitsigns.nvim'        " Git signs in gutter
 
+  " -------------------------------------------------------------------------
   " Auto-pairs
-  Plug 'windwp/nvim-autopairs'
+  " -------------------------------------------------------------------------
+  Plug 'windwp/nvim-autopairs'          " Auto-close pairs
 
+  " -------------------------------------------------------------------------
   " Debugging (DAP)
-  Plug 'mfussenegger/nvim-dap'
-  Plug 'rcarriga/nvim-dap-ui'
-  Plug 'nvim-neotest/nvim-nio'
-  Plug 'mfussenegger/nvim-dap-python'       " Python DAP
-  Plug 'leoluz/nvim-dap-go'                 " Go DAP (for reference)
+  " -------------------------------------------------------------------------
+  Plug 'mfussenegger/nvim-dap'          " Debug Adapter Protocol
+  Plug 'rcarriga/nvim-dap-ui'           " DAP UI
+  Plug 'nvim-neotest/nvim-nio'          " Async IO for DAP
+  Plug 'mfussenegger/nvim-dap-python'   " Python DAP
+  Plug 'leoluz/nvim-dap-go'             " Go DAP (for reference)
 
-  " Data science (Jupyter, Python)
-  Plug 'goerz/jupytext.vim'                 " Jupyter notebook support
-  Plug 'bfredl/nvim-ipy'                    " Interactive Python
+  " -------------------------------------------------------------------------
+  " Data Science (Jupyter, Python)
+  " -------------------------------------------------------------------------
+  Plug 'goerz/jupytext.vim'             " Jupyter notebook support
+  Plug 'bfredl/nvim-ipy'                " Interactive Python
 
+  " -------------------------------------------------------------------------
   " SQL/PostgreSQL
-  Plug 'tpope/vim-dadbod'                   " Database client
-  Plug 'kristijanhusak/vim-dadbod-ui'       " Database UI
-  Plug 'kristijanhusak/vim-dadbod-completion'  " SQL completion
+  " -------------------------------------------------------------------------
+  Plug 'tpope/vim-dadbod'               " Database client
+  Plug 'kristijanhusak/vim-dadbod-ui'   " Database UI
+  Plug 'kristijanhusak/vim-dadbod-completion' " SQL completion
 
-  " Regex testing (cybersecurity)
-  Plug 'tpope/vim-abolish'                  " Advanced regex tools
-  Plug 'markonm/traces.vim'                 " Live regex preview
+  " -------------------------------------------------------------------------
+  " Regex Testing (Cybersecurity)
+  " -------------------------------------------------------------------------
+  Plug 'tpope/vim-abolish'              " Advanced regex tools
+  Plug 'markonm/traces.vim'             " Live regex preview
 
-  " Which key"
-  Plug 'folke/which-key.nvim'
+  " -------------------------------------------------------------------------
+  " Keybinding Helper
+  " -------------------------------------------------------------------------
+  Plug 'folke/which-key.nvim'           " Keybinding discovery
 
-  " Auto indenting/formatting"
-  Plug 'stevearc/conform.nvim'
+  " -------------------------------------------------------------------------
+  " Auto Indenting/Formatting
+  " -------------------------------------------------------------------------
+  Plug 'stevearc/conform.nvim'          " Autoformatting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-  " Lazygit integration in neovim
-  Plug 'kdheepak/lazygit.nvim'
+  " -------------------------------------------------------------------------
+  " Lazygit Integration
+  " -------------------------------------------------------------------------
+  Plug 'kdheepak/lazygit.nvim'          " Lazygit in Neovim
 
-  " Color's in any file
-  Plug 'catgoose/nvim-colorizer.lua'
+  " -------------------------------------------------------------------------
+  " Color Highlighting
+  " -------------------------------------------------------------------------
+  Plug 'catgoose/nvim-colorizer.lua'    " Color highlighting in code
 
-  " Messages, CMDline and Popupmenu
-  Plug 'folke/noice.nvim'
-  Plug 'MunifTanjim/nui.nvim'
-  Plug 'rcarriga/nvim-notify'
+  " -------------------------------------------------------------------------
+  " Enhanced UI (Messages, CMDline, Popupmenu)
+  " -------------------------------------------------------------------------
+  Plug 'folke/noice.nvim'               " Enhanced UI
+  Plug 'MunifTanjim/nui.nvim'           " UI components
+  Plug 'rcarriga/nvim-notify'           " Notification UI
 
-  " AI
-  Plug 'zbirenbaum/copilot.lua'
-  Plug 'zbirenbaum/copilot-cmp'
+  " -------------------------------------------------------------------------
+  " AI Integration
+  " -------------------------------------------------------------------------
+  Plug 'zbirenbaum/copilot.lua'         " GitHub Copilot
+  Plug 'zbirenbaum/copilot-cmp'         " Copilot completion source
 
   call plug#end()
 ]])

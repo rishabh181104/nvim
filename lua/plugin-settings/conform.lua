@@ -1,37 +1,45 @@
--- Configure conform.nvim for autoformatting
+-- ============================================================================
+-- conform.lua
+-- Autoformatting Configuration (conform.nvim & nvim-treesitter)
+-- Professional, Readable, and Well-Documented
+-- ============================================================================
+
+-- --------------------------------------------------------------------------
+-- Setup conform.nvim for Autoformatting
+-- --------------------------------------------------------------------------
 require("conform").setup({
   formatters_by_ft = {
-    python = { "black" },
-    lua = { "stylua" },
-    javascript = { "prettier" },
-    html = { "prettier" },
-    css = { "prettier" },
-    java = { "astyle" },
-    cpp = { "clang-format" },
-    rust = { "rustfmt" },
-    sh = { "shfmt" },
-    -- go = { "gofmt" },
+    python = { "black" },         -- Python: Black
+    lua = { "stylua" },           -- Lua: Stylua
+    javascript = { "prettier" },  -- JS: Prettier
+    html = { "prettier" },        -- HTML: Prettier
+    css = { "prettier" },         -- CSS: Prettier
+    java = { "astyle" },          -- Java: AStyle
+    cpp = { "clang-format" },     -- C++: Clang-Format
+    rust = { "rustfmt" },         -- Rust: rustfmt
+    sh = { "shfmt" },             -- Shell: shfmt
+    -- go = { "gofmt" },          -- Go: gofmt (uncomment if needed)
   },
-  -- Format on save with a 500ms timeout, fallback to LSP if formatter fails
   format_on_save = {
-    timeout_ms = 2,
-    lsp_fallback = true,
+    timeout_ms = 500,             -- Timeout for formatting on save
+    lsp_fallback = true,          -- Use LSP formatting if formatter fails
   },
-  -- Optional: Customize formatter options
   formatters = {
     black = {
-      prepend_args = { "--fast" }, -- Optional: Speed up Black
+      prepend_args = { "--fast" }, -- Speed up Black
     },
     prettier = {
-      prepend_args = { "--single-quote", "--trailing-comma", "es5" }, -- Customize Prettier
+      prepend_args = { "--single-quote", "--trailing-comma", "es5" },
     },
     ["astyle"] = {
-      command = "astyle", -- Adjust if using JAR: e.g., "java -jar /path/to/astyle.jar"
+      command = "astyle",         -- Use astyle (adjust if using JAR)
     },
   },
 })
 
--- Optional: Keymap to manually trigger formatting
+-- --------------------------------------------------------------------------
+-- Keymap: Manually Trigger Formatting
+-- --------------------------------------------------------------------------
 vim.api.nvim_set_keymap(
   "n",
   "<leader>for",
@@ -39,13 +47,14 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
--- Configure nvim-treesitter for autoindenting
+-- --------------------------------------------------------------------------
+-- Setup nvim-treesitter for Autoindenting & Highlighting
+-- --------------------------------------------------------------------------
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "python", "lua", "javascript", "html", "css", "java", "cpp", "rust" },
   indent = {
     enable = true,
-    -- Disable for Python due to occasional issues; rely on Black for indentation
-    disable = { "python" },
+    disable = { "python" }, -- Rely on Black for Python indentation
   },
-  highlight = { enable = true }, -- Optional: Enable syntax highlighting
+  highlight = { enable = true }, -- Enable syntax highlighting
 })
