@@ -59,13 +59,6 @@ update_system() {
   print_success "System packages updated."
 }
 
-# Install dependencies
-install_dependencies() {
-  print_header "Installing dependencies via paru..."
-  paru --noconfirm -S --needed git curl neovim unzip make lua-language-server stylua fzf nodejs-lts-iron npm clang astyle jdtls python python-pip python-debugpy python-ipython-autoimport python-black python-pipx postgresql postgresql-libs gdb shfmt shellcheck || print_error "Dependency installation failed."
-  print_success "All dependencies installed."
-}
-
 # Install Vim-Plug (with check)
 install_vimplug() {
   print_header "Checking for Vim-Plug..."
