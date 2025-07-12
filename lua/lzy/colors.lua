@@ -19,10 +19,43 @@ require("onedark").load()
 
 -- -- This is for Rose-pine theme
 -- vim.cmd("colorscheme rose-pine")
---
--- -- This is for Nightfox theme
--- require("nightfox").setup({ palettes = palettes, specs = specs, groups = groups })
+-- require("nightfox").setup({
+-- 	options = {
+-- 		transparent = true,
+-- 		terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+-- 		dim_inactive = true, -- Non focused panes set to alternative background
+-- 		module_default = true,
+-- 	},
+-- })
 --
 -- -- setup must be called before loading
--- vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme terafox")
 -- vim.o.background = "dark"
+
+-- -- Kanagawa ColorScheme
+-- require("kanagawa").setup({
+-- 	compile = true, -- enable compiling the colorscheme
+-- 	undercurl = true, -- enable undercurls
+-- 	commentStyle = { italic = true },
+-- 	functionStyle = {},
+-- 	keywordStyle = { italic = true },
+-- 	statementStyle = { bold = true },
+-- 	typeStyle = {},
+-- 	transparent = true, -- do not set background color
+-- 	dimInactive = true, -- dim inactive window `:h hl-NormalNC`
+-- 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
+-- 	colors = { -- add/modify theme and palette colors
+-- 		palette = {},
+-- 		theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+-- 	},
+-- 	overrides = function(colors) -- add/modify highlights
+-- 		return {}
+-- 	end,
+-- 	theme = "wave", -- Load "wave" theme
+-- 	background = { -- map the value of 'background' option to a theme
+-- 		dark = "dragon", -- try "dragon" !
+-- 		light = "lotus",
+-- 	},
+-- })
+--
+-- vim.cmd("colorscheme kanagawa")

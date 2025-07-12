@@ -12,8 +12,9 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
+	-- "EdenEast/nightfox.nvim",
+	-- "rebelot/kanagawa.nvim",
 	"navarasu/onedark.nvim",
-	-- 'EdenEast/nightfox.nvim',
 	-- 'rose-pine/neovim',
 
 	-- -------------------------------------------------------------------------
@@ -26,6 +27,22 @@ require("lazy").setup({
 	"hrsh7th/cmp-path",
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
+
+	-- -------------------------------------------------------------------------
+	-- Mason
+	-- -------------------------------------------------------------------------
+	{
+		"mason-org/mason.nvim",
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		},
+	},
 
 	-- -------------------------------------------------------------------------
 	-- Linting
