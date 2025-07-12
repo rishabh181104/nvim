@@ -9,42 +9,42 @@ vim.g.mapleader = " "
 -- --------------------------------------------------------------------------
 -- Load Plugin Settings (modular, each file configures a plugin)
 -- --------------------------------------------------------------------------
-local plugins_settings = {
+local lzy = {
 	"lazy",
 	"settings",
-  "autoindent",
-  "autopairs",
-  "colorizer",
-  "colors",
-  "conform",
-  "copilot-cmp",
-  "copilot",
-  "debugger",
-  "fzf-lua",
-  "gitsigns",
-  "harpoon",
-  "jupyter",
-  "lsp",
-  "lualine",
-  "noice",
-  "nvim-lint",
-  "oil",
-  "regex",
-  "sql",
-  "treesitter",
-  "whichkey",
+	"autoindent",
+	"autopairs",
+	"colorizer",
+	"colors",
+	"conform",
+	"copilot-cmp",
+	"copilot",
+	"debugger",
+	"fzf-lua",
+	"gitsigns",
+	"harpoon",
+	"jupyter",
+	"lsp",
+	"lualine",
+	"noice",
+	"nvim-lint",
+	"oil",
+	"regex",
+	"sql",
+	"treesitter",
+	"whichkey",
 }
 
 -- Filetype autocmd for bspwmrc/sxhkdrc (shell syntax)
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "bspwmrc", "sxhkdrc" },
-  command = "set filetype=sh",
+	pattern = { "bspwmrc", "sxhkdrc" },
+	command = "set filetype=sh",
 })
 
 -- Load each plugin setting module safely
-for _, module in ipairs(plugins_settings) do
-  local ok, err = pcall(require, "plugins-settings." .. module)
-  if not ok then
-    vim.notify("Error loading plugins-settings/" .. module .. ": " .. err, vim.log.levels.ERROR)
-  end
+for _, module in ipairs(lzy) do
+	local ok, err = pcall(require, "lzy." .. module)
+	if not ok then
+		vim.notify("Error loading lzy/" .. module .. ": " .. err, vim.log.levels.ERROR)
+	end
 end
