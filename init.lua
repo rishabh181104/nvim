@@ -33,6 +33,7 @@ local lzy = {
 	"sql",
 	"treesitter",
 	"whichkey",
+	"notify",
 }
 
 -- Filetype autocmd for bspwmrc/sxhkdrc (shell syntax)

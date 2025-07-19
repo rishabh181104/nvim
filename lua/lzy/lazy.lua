@@ -16,6 +16,11 @@ require("lazy").setup({
 	-- "rebelot/kanagawa.nvim",
 	"navarasu/onedark.nvim",
 	-- 'rose-pine/neovim',
+	--
+	-- -------------------------------------------------------------------------
+	-- For seemless Tmux Integration
+	-- -------------------------------------------------------------------------
+	"christoomey/vim-tmux-navigator",
 
 	-- -------------------------------------------------------------------------
 	-- LSP and Completion
