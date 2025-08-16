@@ -17,8 +17,6 @@ local lzy = {
 	"colorizer",
 	"colors",
 	"conform",
-	"copilot-cmp",
-	"copilot",
 	"debugger",
 	"fzf-lua",
 	"gitsigns",

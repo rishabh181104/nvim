@@ -28,7 +28,7 @@ local servers = {
   "ts_ls", -- JavaScript/TypeScript
   "jdtls", -- Java
   "clangd", -- C++
-  "rust_analyzer", -- Rust
+  "rustfmt", -- Rust
   "pyright", -- Python
   "sqlls", -- SQL
   "lua_ls", -- Lua
